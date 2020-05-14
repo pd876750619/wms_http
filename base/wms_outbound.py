@@ -1,3 +1,4 @@
+import random
 import time
 
 from base.receipt_config import get_warehouse_code, get_wave_template_id, get_outbound_num
@@ -94,7 +95,7 @@ def get_value():
 
 
 def fill_detail(item):
-    detail_no = time.time().__str__().replace(".", "")
+    detail_no = time.time().__str__().replace(".", "") + random.randint(1, 100)
     detail = item
     detail["qualityStatus"] = 1
     detail["salePrice"] = 1000
